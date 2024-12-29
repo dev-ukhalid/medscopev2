@@ -67,7 +67,7 @@ const AnimatedHero = () => {
       transition: {
         duration: 1,
         repeat: Infinity,
-        repeatType: "reverse",
+        repeatType: "reverse", // Valid values: "reverse", "loop", "mirror"
         ease: "easeInOut"
       }
     }
