@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { CircleDot, ArrowRight } from 'lucide-react'
 import Navigation from '../components/Nav'
-import Image from 'next/image'
 
 interface Product {
   id: number
@@ -294,13 +293,11 @@ export default function ProductsSection() {
                       transition={{ duration: 0.4 }}
                       className="relative h-64 overflow-hidden"
                     >
-                      <Image
+                      <img
                         src={product.image}
                         alt={product.title}
                         className="w-full h-full object-cover transition-transform duration-300"
                         loading="lazy"
-                        width={100}
-                        height={100}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                     </motion.div>

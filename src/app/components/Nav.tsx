@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import Image from 'next/image';
 
 interface NavItem {
   label: string;
@@ -141,7 +140,7 @@ const Navigation: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className="text-xl font-bold text-gray-900"
             >
-              <Image
+              <img
                 src='/medscope.png'
                 alt='logo'
                 width={120}

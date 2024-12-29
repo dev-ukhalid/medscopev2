@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BadgeCheck, Trophy } from 'lucide-react';
-import Image from 'next/image';
 
 const LeadershipSection = () => {
   const containerVariants = {
@@ -17,8 +16,7 @@ const LeadershipSection = () => {
         staggerChildren: 0.2
       }
     }
-  };
-
+  }
   const cardVariants = {
     hidden: { 
       opacity: 0,
@@ -117,7 +115,7 @@ const LeadershipSection = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 sm:gap-16">
-          {leaders.map((leader, index) => (
+          {leaders.map((leader) => (
             <motion.div
               key={leader.name}
               variants={cardVariants}
@@ -152,12 +150,10 @@ const LeadershipSection = () => {
                   <div className="flex flex-col items-center">
                     <div className="relative">
                       <div className="w-32 h-32 sm:w-48 sm:h-48 rounded-full overflow-hidden mb-4 sm:mb-8 ring-2 sm:ring-4 ring-yellow-300 group-hover:ring-yellow-400 transition-all duration-300 relative">
-                        <Image
+                        <img
                           src={leader.image}
                           alt={leader.name}
                           className="w-full h-full object-cover"
-                          width={100}
-                          height={100}
                         />
                       </div>
                       <motion.div
