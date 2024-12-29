@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BadgeCheck, Trophy } from 'lucide-react';
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import Image from 'next/image';
 
 const LeadershipSection = () => {
   const containerVariants = {
@@ -152,10 +152,12 @@ const LeadershipSection = () => {
                   <div className="flex flex-col items-center">
                     <div className="relative">
                       <div className="w-32 h-32 sm:w-48 sm:h-48 rounded-full overflow-hidden mb-4 sm:mb-8 ring-2 sm:ring-4 ring-yellow-300 group-hover:ring-yellow-400 transition-all duration-300 relative">
-                        <img
+                        <Image
                           src={leader.image}
                           alt={leader.name}
                           className="w-full h-full object-cover"
+                          width={100}
+                          height={100}
                         />
                       </div>
                       <motion.div

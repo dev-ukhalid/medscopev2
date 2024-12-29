@@ -3,11 +3,12 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import Image from 'next/image';
 
 const backgroundImages = [
-  "bg1.jpg",
-  "bg2.jpg",
-  "bg4.jpg"
+  "/bg1.jpg",
+  "/bg2.jpg",
+  "/bg4.jpg"
 ];
 
 const AnimatedHero = () => {
@@ -96,10 +97,12 @@ const AnimatedHero = () => {
           style={{ y: backgroundY }}
           className="absolute inset-0 -z-10"
         >
-          <img 
+          <Image
             src={backgroundImages[currentImageIndex]}
             alt="Medical Equipment"
             className="absolute w-full h-full object-cover object-center"
+            width={100}
+            height={100}
           />
         </motion.div>
       </AnimatePresence>

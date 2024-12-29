@@ -35,10 +35,6 @@ const socialLinks: SocialLink[] = [
   }
 ];
 
-interface QuickLink {
-  name: string;
-  href: string;
-}
 
 const Footer: React.FC = () => {
   return (

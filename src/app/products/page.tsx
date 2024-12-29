@@ -217,17 +217,6 @@ export default function ProductsSection() {
       }
     }
   }
-
-  const buttonVariants = {
-    hover: {
-      x: 5,
-      transition: {
-        duration: 0.2,
-        ease: "easeInOut"
-      }
-    }
-  }
-
   return (
     <> 
       <Navigation />
@@ -310,6 +299,8 @@ export default function ProductsSection() {
                         alt={product.title}
                         className="w-full h-full object-cover transition-transform duration-300"
                         loading="lazy"
+                        width={100}
+                        height={100}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                     </motion.div>
