@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ChevronRight, CircleDot, ArrowRight } from 'lucide-react'
+import { CircleDot, ArrowRight } from 'lucide-react'
 import Navigation from '../components/Nav'
-import { useState, useEffect } from "react"
+import Image from 'next/image'
 
 interface Product {
   id: number
@@ -305,7 +305,7 @@ export default function ProductsSection() {
                       transition={{ duration: 0.4 }}
                       className="relative h-64 overflow-hidden"
                     >
-                      <img
+                      <Image
                         src={product.image}
                         alt={product.title}
                         className="w-full h-full object-cover transition-transform duration-300"
