@@ -1,6 +1,6 @@
-'use client';
+"use client";
 import { useState, useEffect } from "react";
-import AnimatedHero from '../app/components/AnimatedHero';
+import AnimatedHero from "../app/components/AnimatedHero";
 import Navigation from "./components/Nav";
 import WhoWeAreAndMission from "./components/WhoWeAreAndMission";
 import ProductsSection from "./components/products";
@@ -25,16 +25,20 @@ export default function Home() {
   }
 
   return (
-    <div>
-       <Navigation />
-       <AnimatedHero />
-       <div id="about">
-       <WhoWeAreAndMission /> 
-       </div>
-       <ProductsSection />
-       <LeadershipSection />
-       <MapSection />
-       <Footer />
-    </div>
+    <>
+      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <Navigation />
+          <AnimatedHero />
+          <div id="about">
+            <WhoWeAreAndMission />
+          </div>
+          <ProductsSection />
+          <LeadershipSection />
+          <MapSection />
+          <Footer />
+        </div>
+      </section>
+    </>
   );
 }
