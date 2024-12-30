@@ -80,7 +80,7 @@ const AnimatedHero: React.FC = () => {
     >
       {/* Static overlay background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 via-blue-500/85 to-blue-400/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-500/90 via-sky-500/85 to-sky-400/80" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.1),transparent)]" />
       </div>
@@ -166,7 +166,7 @@ const AnimatedHero: React.FC = () => {
               animate={isVisible ? "visible" : "hidden"}
               whileHover="hover"
               whileTap="tap"
-              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold 
+              className="bg-white text-sky-500 px-8 py-3 rounded-full font-semibold 
                        shadow-lg backdrop-blur-sm hover:bg-blue-50 transition-colors
                        flex items-center justify-center mx-auto space-x-2"
             >

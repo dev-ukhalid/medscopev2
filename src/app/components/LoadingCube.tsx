@@ -22,7 +22,7 @@ const LoadingCube = () => (
         <div className="absolute w-16 h-16 bg-yellow-500/90 transform-gpu"
              style={{ transform: 'translateX(-8px) rotateY(-90deg)' }} />
         {/* Top face - Blue */}
-        <div className="absolute w-16 h-16 bg-blue-500/90 transform-gpu"
+        <div className="absolute w-16 h-16 bg-sky-500/90 transform-gpu"
              style={{ transform: 'translateY(-8px) rotateX(90deg)' }} />
         {/* Bottom face - Orange */}
         <div className="absolute w-16 h-16 bg-orange-500/90 transform-gpu"

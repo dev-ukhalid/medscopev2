@@ -92,19 +92,19 @@ const LeadershipSection = () => {
         <motion.div variants={itemVariants} className="text-center mb-12 sm:mb-24">
           <motion.span 
             variants={itemVariants}
-            className="text-blue-600 font-semibold text-base sm:text-lg mb-2 sm:mb-4 block"
+            className="text-sky-500 font-semibold text-base sm:text-lg mb-2 sm:mb-4 block"
           >
             Meet Our Team
           </motion.span>
           <motion.h2 
             variants={itemVariants}
-            className="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-4 sm:mb-8"
+            className="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-sky-500 to-sky-800 bg-clip-text text-transparent mb-4 sm:mb-8"
           >
             Our Leadership
           </motion.h2>
           <motion.div 
             variants={itemVariants}
-            className="w-16 sm:w-24 h-1 sm:h-2 bg-blue-600 mx-auto rounded-full mb-4 sm:mb-8" 
+            className="w-16 sm:w-24 h-1 sm:h-2 bg-sky-500 mx-auto rounded-full mb-4 sm:mb-8" 
           />
           <motion.p 
             variants={itemVariants}
@@ -180,7 +180,7 @@ const LeadershipSection = () => {
                           className="bg-blue-100 p-1 rounded-full flex-shrink-0"
                         >
                           <BadgeCheck 
-                            className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" 
+                            className="w-4 h-4 sm:w-5 sm:h-5 text-sky-500" 
                             strokeWidth={2}
                             fill="white"
                           />
@@ -188,7 +188,7 @@ const LeadershipSection = () => {
                       </div>
                     </div>
                     
-                    <p className="text-base sm:text-lg font-semibold text-blue-600 mb-1 sm:mb-2">{leader.title}</p>
+                    <p className="text-base sm:text-lg font-semibold text-sky-500 mb-1 sm:mb-2">{leader.title}</p>
                     <p className="text-gray-600 font-medium mb-2 sm:mb-4 text-xs sm:text-sm">{leader.location}</p>
                     {leader.bio && (
                       <motion.p 

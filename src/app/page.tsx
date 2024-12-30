@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import AnimatedHero from "../app/components/AnimatedHero";
 import Navigation from "./components/Nav";
@@ -8,12 +9,12 @@ import LeadershipSection from "./components/executives";
 import Footer from "./components/footer";
 import LoadingCube from "./components/LoadingCube";
 import MapSection from "./components/MapSection";
+import FeatureCarousel from "./components/FeatureCarousel";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time or wait for your actual data
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -25,14 +26,17 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div className="w-full overflow-x-hidden">
       <Navigation />
-      <AnimatedHero />
-      <WhoWeAreAndMission />
-      <ProductsSection />
-      <LeadershipSection />
-      <MapSection />
-      <Footer />
-    </>
+      <main className="relative">
+        <AnimatedHero />
+        <WhoWeAreAndMission />
+        <ProductsSection />
+        <FeatureCarousel />
+        <LeadershipSection />
+        <MapSection />
+        <Footer />
+      </main>
+    </div>
   );
 }

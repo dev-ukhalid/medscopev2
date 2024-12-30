@@ -54,13 +54,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-gray-400">
               <li className="flex items-start space-x-2">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-                <span>NO. 14 Murtala Mohammed Way opposite kano Golf club, Kano State, Nigeria.</span>
+                <span>10 Audu Bako Way, Opposite Raisins Restaurant,
+                Kano, Nigeria.</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-5 h-5 flex-shrink-0" />
                 <div>
-                  <p>07000000000</p>
-                  <p>08000000000</p>
+                  <p>08026636728</p>
+                  <p>08106326722</p>
+                  <p>FAX: 1010877038</p>
                 </div>
               </li>
               <li className="flex items-center space-x-2">
@@ -85,7 +87,7 @@ const Footer: React.FC = () => {
                   </a>
                 ))}
               </div>
-              <p className="text-gray-400 text-sm">Follow us on social media for updates and news</p>
+              <p className="text-gray-400 text-sm">Follow us on social media for updates</p>
             </div>
           </div>
         </div>

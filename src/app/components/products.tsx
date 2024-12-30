@@ -191,7 +191,7 @@ export default function ProductsSection() {
               <h2 className="text-4xl font-bold text-gray-900 mb-2">
                 Advanced{" "}
                 <span className="relative inline-block">
-                  <span className="text-blue-600">Medical</span>
+                  <span className="text-sky-600">Medical</span>
                   <svg
                     className="absolute -bottom-2 left-0 w-full"
                     xmlns="http://www.w3.org/2000/svg"
@@ -204,7 +204,7 @@ export default function ProductsSection() {
                       stroke="#2563EB"
                       strokeWidth="2"
                       d="M0 6C20 2 40 2 50 3C60 4 80 4 100 6"
-                      className="stroke-blue-600"
+                      className="stroke-sky-600"
                     />
                   </svg>
                   <motion.div
@@ -238,8 +238,8 @@ export default function ProductsSection() {
                 whileHover="hover"
                 className="group relative bg-white rounded-2xl overflow-hidden shadow-lg transform-gpu"
               >
-                <div className="absolute top-0 left-0 w-24 h-24 border-l-4 border-t-4 border-blue-600/20 rounded-tl-2xl" />
-                <div className="absolute bottom-0 right-0 w-24 h-24 border-r-4 border-b-4 border-blue-600/20 rounded-br-2xl" />
+                <div className="absolute top-0 left-0 w-24 h-24 border-l-4 border-t-4 border-sky-600/20 rounded-tl-2xl" />
+                <div className="absolute bottom-0 right-0 w-24 h-24 border-r-4 border-b-4 border-sky-600/20 rounded-br-2xl" />
                 
                 <div className="relative">
                   <motion.div
@@ -255,7 +255,7 @@ export default function ProductsSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   </motion.div>
                   <div className="absolute top-4 left-4 flex items-center space-x-2">
-                    <span className="bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-lg">
+                    <span className="bg-sky-600 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-lg">
                       {product.category}
                     </span>
                   </div>
@@ -274,7 +274,7 @@ export default function ProductsSection() {
                   <ul className="space-y-2 relative">
                     {product.features.map((feature, index) => (
                       <li key={index} className="flex items-center text-gray-700">
-                        <CircleDot className="w-4 h-4 text-blue-600 mr-2" />
+                        <CircleDot className="w-4 h-4 text-sky-600 mr-2" />
                         {feature}
                       </li>
                     ))}
@@ -284,7 +284,7 @@ export default function ProductsSection() {
                     href="/products"
                     variants={buttonVariants}
                     whileHover="hover"
-                    className="relative inline-flex items-center text-blue-600 font-semibold group mt-4 cursor-pointer"
+                    className="relative inline-flex items-center text-sky-600 font-semibold group mt-4 cursor-pointer"
                   >
                     <span className="relative z-10">Learn More</span>
                     <motion.span
@@ -306,7 +306,7 @@ export default function ProductsSection() {
               initial="rest"
               whileHover="hover"
               variants={viewMoreVariants}
-              className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center px-8 py-4 bg-sky-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-colors"
             >
               <span>View All Products</span>
               <motion.span variants={arrowVariants} className="ml-2">
