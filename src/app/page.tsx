@@ -21,40 +21,18 @@ export default function Home() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <LoadingCube />
-      </div>
-    );
+    return <LoadingCube />;
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <Navigation />
-      <main className="flex-grow">
-        <div className="w-full">
-          <AnimatedHero />
-        </div>
-        
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <section id="about" className="py-12 md:py-16">
-            <WhoWeAreAndMission />
-          </section>
-          
-          <section className="py-12 md:py-16">
-            <ProductsSection />
-          </section>
-          
-          <section className="py-12 md:py-16">
-            <LeadershipSection />
-          </section>
-          
-          <section className="py-12 md:py-16">
-            <MapSection />
-          </section>
-        </div>
-      </main>
+      <AnimatedHero />
+      <WhoWeAreAndMission />
+      <ProductsSection />
+      <LeadershipSection />
+      <MapSection />
       <Footer />
-    </div>
+    </>
   );
 }
