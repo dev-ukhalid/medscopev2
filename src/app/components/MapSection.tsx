@@ -5,11 +5,12 @@ import { motion } from 'framer-motion'
 import { MapPin, ExternalLink } from 'lucide-react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet'
+import type { LatLngTuple } from 'leaflet'
 
 const MapSection = () => {
   const [isHovered, setIsHovered] = useState(false)
   // Updated coordinates for NO. 14 Murtala Mohammed Way, Kano
-  const position = [11.991643, 8.533814]
+  const position: LatLngTuple = [11.991643, 8.533814]
 
   // Custom SVG marker icon
   const customIcon = L.divIcon({
@@ -84,6 +85,7 @@ const MapSection = () => {
               <MapContainer 
                 center={position} 
                 zoom={16} 
+                scrollWheelZoom={false}
                 style={{ height: '100%', width: '100%', borderRadius: '1.5rem' }}
                 zoomControl={false}
               >
@@ -115,7 +117,6 @@ const MapSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Rest of the component remains the same */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}

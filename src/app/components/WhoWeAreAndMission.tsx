@@ -1,14 +1,31 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { 
   Building2, Activity, Brain, Target, 
-  Users, Globe, Handshake, Star 
+  Users, Globe, Handshake, Star,
+  LucideIcon
 } from 'lucide-react';
 
-const AnimatedUnderline = ({ width = 300, className = "" }) => {
-  const pathVariants = {
+interface AnimatedUnderlineProps {
+  width?: number;
+  className?: string;
+}
+
+interface DecorativeCardProps {
+  children: React.ReactNode;
+}
+
+interface IconWithGlowProps {
+  Icon: LucideIcon;
+}
+
+const AnimatedUnderline: React.FC<AnimatedUnderlineProps> = ({ 
+  width = 300, 
+  className = "" 
+}) => {
+  const pathVariants: Variants = {
     hidden: {
       pathLength: 0,
       opacity: 0
@@ -46,16 +63,14 @@ const AnimatedUnderline = ({ width = 300, className = "" }) => {
   );
 };
 
-const DecorativeCard = ({ children }) => {
+const DecorativeCard: React.FC<DecorativeCardProps> = ({ children }) => {
   return (
     <div className="relative">
-      {/* Decorative corner elements */}
       <div className="absolute -top-3 -left-3 w-8 h-8 border-t-4 border-l-4 border-blue-500 rounded-tl-xl" />
       <div className="absolute -top-3 -right-3 w-8 h-8 border-t-4 border-r-4 border-blue-500 rounded-tr-xl" />
       <div className="absolute -bottom-3 -left-3 w-8 h-8 border-b-4 border-l-4 border-blue-500 rounded-bl-xl" />
       <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-4 border-r-4 border-blue-500 rounded-br-xl" />
 
-      {/* Main content card with gradient border */}
       <div className="bg-white rounded-3xl shadow-xl overflow-hidden p-1">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl" />
         <div className="relative bg-white rounded-[22px]">
@@ -66,15 +81,15 @@ const DecorativeCard = ({ children }) => {
   );
 };
 
-const IconWithGlow = ({ Icon }) => (
+const IconWithGlow: React.FC<IconWithGlowProps> = ({ Icon }) => (
   <div className="relative">
     <div className="absolute -inset-2 bg-blue-100 rounded-lg opacity-50 blur-sm" />
     <Icon className="w-12 h-12 text-blue-600 relative" />
   </div>
 );
 
-const WhoWeAreAndMission = () => {
-  const containerVariants = {
+const WhoWeAreAndMission: React.FC = () => {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -82,7 +97,7 @@ const WhoWeAreAndMission = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,

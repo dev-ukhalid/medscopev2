@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { ChevronRight, CircleDot, ArrowRight } from 'lucide-react'
 
 interface Product {
@@ -94,7 +94,7 @@ const products: Product[] = [
 ]
 
 export default function ProductsSection() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -104,7 +104,7 @@ export default function ProductsSection() {
     }
   }
 
-  const glowVariants = {
+  const glowVariants: Variants = {
     animate: {
       opacity: [0.4, 1, 0.4],
       scale: [1, 1.2, 1],
@@ -116,7 +116,7 @@ export default function ProductsSection() {
     }
   }
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { 
       opacity: 0,
       y: 50
@@ -138,7 +138,7 @@ export default function ProductsSection() {
     }
   }
 
-  const buttonVariants = {
+  const buttonVariants: Variants = {
     hover: {
       x: 5,
       transition: {
@@ -148,7 +148,7 @@ export default function ProductsSection() {
     }
   }
 
-  const viewMoreVariants = {
+  const viewMoreVariants: Variants = {
     rest: { scale: 1 },
     hover: { 
       scale: 1.05,
@@ -159,7 +159,7 @@ export default function ProductsSection() {
     }
   }
 
-  const arrowVariants = {
+  const arrowVariants: Variants = {
     rest: { x: 0 },
     hover: { 
       x: 5,
@@ -281,7 +281,7 @@ export default function ProductsSection() {
                   </ul>
                   
                   <motion.a
-                    href={`/products`}
+                    href="/products"
                     variants={buttonVariants}
                     whileHover="hover"
                     className="relative inline-flex items-center text-blue-600 font-semibold group mt-4 cursor-pointer"

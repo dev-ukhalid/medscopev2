@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence, Variants } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
 const backgroundImages = [
@@ -10,7 +10,7 @@ const backgroundImages = [
   "/bg4.jpg"
 ];
 
-const AnimatedHero = () => {
+const AnimatedHero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { scrollY } = useScroll();
@@ -27,7 +27,7 @@ const AnimatedHero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const titleVariants = {
+  const titleVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -36,7 +36,7 @@ const AnimatedHero = () => {
     }
   };
 
-  const subtitleVariants = {
+  const subtitleVariants: Variants = {
     hidden: { opacity: 0, x: -20 },
     visible: {
       opacity: 1,
@@ -45,7 +45,7 @@ const AnimatedHero = () => {
     }
   };
 
-  const buttonVariants = {
+  const buttonVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
@@ -59,7 +59,7 @@ const AnimatedHero = () => {
     tap: { scale: 0.95 }
   };
 
-  const scrollIndicatorVariants = {
+  const scrollIndicatorVariants: Variants = {
     initial: { y: -5, opacity: 0.5 },
     animate: {
       y: 5,
@@ -67,7 +67,7 @@ const AnimatedHero = () => {
       transition: {
         duration: 1,
         repeat: Infinity,
-        repeatType: "reverse", // Valid values: "reverse", "loop", "mirror"
+        repeatType: "reverse",
         ease: "easeInOut"
       }
     }
