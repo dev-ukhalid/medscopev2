@@ -3,30 +3,18 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, ExternalLink } from 'lucide-react'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import L from 'leaflet'
+import dynamic from 'next/dynamic'
 import type { LatLngTuple } from 'leaflet'
+
+// Dynamically import the Map component with SSR disabled
+const MapComponent = dynamic(
+  () => import('./MapComponent'),
+  { ssr: false }
+)
 
 const MapSection = () => {
   const [isHovered, setIsHovered] = useState(false)
-  // Updated coordinates for NO. 14 Murtala Mohammed Way, Kano
   const position: LatLngTuple = [11.991643, 8.533814]
-
-  // Custom SVG marker icon
-  const customIcon = L.divIcon({
-    className: 'custom-pin',
-    html: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M24 4C16.268 4 10 10.268 10 18c0 12 14 26 14 26s14-14 14-26c0-7.732-6.268-14-14-14z" 
-        fill="#2563EB" 
-        stroke="white" 
-        stroke-width="2"
-      />
-      <circle cx="24" cy="18" r="7" fill="white"/>
-    </svg>`,
-    iconSize: [48, 48],
-    iconAnchor: [24, 48],
-    popupAnchor: [0, -48]
-  })
 
   return (
     <section className="relative py-24 bg-gradient-to-b from-white to-blue-50">
@@ -82,33 +70,7 @@ const MapSection = () => {
               onHoverEnd={() => setIsHovered(false)}
               className="relative w-full h-[600px] bg-gray-200 rounded-3xl overflow-hidden"
             >
-              <MapContainer 
-                center={position} 
-                zoom={16} 
-                scrollWheelZoom={false}
-                style={{ height: '100%', width: '100%', borderRadius: '1.5rem' }}
-                zoomControl={false}
-              >
-                <TileLayer
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  className="map-tiles"
-                />
-                <Marker position={position} icon={customIcon}>
-                  <Popup>
-                    <div className="p-2">
-                      <h3 className="font-semibold">MedEquip Headquarters</h3>
-                      <p className="text-sm">
-                        NO. 14 Murtala Mohammed Way
-                        <br />
-                        Opposite Kano Golf Club
-                        <br />
-                        Kano State, Nigeria
-                      </p>
-                    </div>
-                  </Popup>
-                </Marker>
-              </MapContainer>
+              <MapComponent position={position} />
               <motion.div
                 initial={false}
                 animate={{ opacity: isHovered ? 1 : 0 }}
@@ -156,27 +118,6 @@ const MapSection = () => {
           </motion.div>
         </div>
       </div>
-
-      <style jsx global>{`
-        .leaflet-container {
-          z-index: 1;
-        }
-        .map-tiles {
-          filter: hue-rotate(10deg) saturate(120%);
-        }
-        .leaflet-popup-content-wrapper {
-          border-radius: 1rem;
-        }
-        .leaflet-popup-tip-container {
-          margin-top: -1px;
-        }
-        .custom-pin {
-          background: none;
-          border: none;
-          width: 48px !important;
-          height: 48px !important;
-        }
-      `}</style>
     </section>
   )
 }

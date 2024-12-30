@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, MessageCircle } from 'lucide-react';
 
